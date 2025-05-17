@@ -5,11 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adnan Hussain - Software Engineer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav class="navbar">
-        <div class="nav-brand">AH.</div>
+        <div class="nav-brand" style="font-family:'Segoe UI',sans-serif;font-size:2rem;font-weight:800;letter-spacing:1px;color:#2563eb;display:flex;align-items:center;gap:0.5rem;">
+            <i class="fas fa-laptop-code" style="color:#2563eb;font-size:2.1rem;"></i>
+            Adnan Hussain
+        </div>
+        <button class="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </button>
         <ul class="nav-links">
             <li><a href="#home" class="active">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -17,13 +26,16 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
+    
 
     <section id="home" class="hero">
+        <div class="hero-blur"></div>
         <div class="hero-content">
-            <h1>Hi, I'm <span class="highlight">Adnan Hussain</span></h1>
-            <h2>Software Engineer</h2>
-            <p class="tagline">Turning ideas into elegant solutions</p>
-            <div class="cta-buttons">
+            <div class="particles" id="particles"></div>
+            <h1 data-aos="fade-up">Hi, I'm <span class="highlight">Adnan Hussain</span></h1>
+            <h2 data-aos="fade-up" data-aos-delay="200">Software Engineer</h2>
+            <p class="tagline" data-aos="fade-up" data-aos-delay="400">Turning ideas into elegant solutions</p>
+            <div class="cta-buttons" data-aos="fade-up" data-aos-delay="600">
                 <a href="#projects" class="btn primary">View My Work</a>
                 <a href="#contact" class="btn secondary">Get In Touch</a>
             </div>
@@ -35,82 +47,468 @@
             <a href="https://linkedin.com/" target="_blank" class="social-icon">
                 <i class="fab fa-linkedin"></i>
             </a>
+            <!-- Updated LinkedIn Profile Link -->
+            <a href="https://www.linkedin.com/in/adnan-ali-520a21263" target="_blank" class="social-icon" title="LinkedIn Profile">
+                <i class="fab fa-linkedin"></i>
+            </a>
             <a href="mailto:your.email@example.com" class="social-icon">
                 <i class="fas fa-envelope"></i>
             </a>
         </div>
     </section>
+    
 
     <section id="about" class="about">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-content">
-            <div class="about-image">
+        <h2 class="section-title" data-aos="fade-up">About Me</h2>
+        <div class="about-content" style="flex-wrap:wrap;gap:2.5rem;align-items:flex-start;">
+            <div class="about-image" data-aos="fade-right">
                 <div class="image-placeholder">
-                    <!-- Replace with your image -->
-                    <img src="/api/placeholder/400/400" alt="Adnan Hussain">
+                    <img src="6d09185a-6502-42c4-a682-0c47b4d5702c.jpg" alt="Adnan Hussain" style="object-fit:cover;width:200px;height:200px;border-radius:50%;border:5px solid #2563eb;box-shadow:0 6px 24px rgba(44,83,100,0.18);background:#fff;">
+                </div>
+                <div style="margin-top:1.2rem;text-align:center;">
+                    <h3 style="margin-bottom:0.2rem;color:#2563eb;">Adnan Hussain</h3>
+                    <span style="font-size:1.1rem;color:#64748b;">Software Engineer & Full Stack Developer</span>
                 </div>
             </div>
-            <div class="about-text">
-                <p>I'm a passionate Software Engineer with a keen interest in building innovative solutions. At just 20 years old, I've already developed numerous projects that demonstrate my commitment to clean code and user-centered design.</p>
+            <div class="about-text" data-aos="fade-left" style="flex:1;min-width:320px;">
+                <p style="font-size:1.18rem;line-height:1.8;margin-bottom:1.2rem;">I'm a passionate Software Engineer with a strong background in full stack web development, AI, and modern cloud technologies. I thrive on building scalable, user-focused products and love collaborating with teams to deliver innovative solutions. My journey includes leading-edge projects in MERN, AI chatbots, and real-time applications.</p>
                 <div class="skills">
-                    <h3>My Skills</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">HTML5</span>
-                        <span class="skill-tag">CSS3</span>
-                        <span class="skill-tag">Git</span>
+                    <h3 style="margin-bottom:0.5rem;">My Skills</h3>
+                    <div class="skill-tags" style="display:flex;flex-wrap:wrap;gap:0.7rem;">
+                        <span class="skill-tag" style="background:#f7df1e;color:#222;"><i class="fab fa-js-square"></i> JavaScript</span>
+                        <span class="skill-tag" style="background:#61dafb;color:#222;"><i class="fab fa-react"></i> React</span>
+                        <span class="skill-tag" style="background:#3c873a;color:#fff;"><i class="fab fa-node-js"></i> Node.js</span>
+                        <span class="skill-tag" style="background:#e34c26;color:#fff;"><i class="fab fa-html5"></i> HTML5</span>
+                        <span class="skill-tag" style="background:#2965f1;color:#fff;"><i class="fab fa-css3-alt"></i> CSS3</span>
+                        <span class="skill-tag" style="background:#24292e;color:#fff;"><i class="fab fa-git-alt"></i> Git</span>
+                        <span class="skill-tag" style="background:#f05032;color:#fff;"><i class="fab fa-github"></i> GitHub</span>
+                        <span class="skill-tag" style="background:#4db33d;color:#fff;"><i class="fab fa-envira"></i> MongoDB</span>
+                        <span class="skill-tag" style="background:#000;color:#fff;"><i class="fab fa-python"></i> Python</span>
+                        <span class="skill-tag" style="background:#e34c26;color:#fff;"><i class="fab fa-java"></i> Java</span>
+                        <span class="skill-tag" style="background:#563d7c;color:#fff;"><i class="fab fa-bootstrap"></i> Bootstrap</span>
+                        <span class="skill-tag" style="background:#38b2ac;color:#fff;">Tailwind CSS</span>
+                        <span class="skill-tag" style="background:#ffb13b;color:#fff;">Express.js</span>
+                        <span class="skill-tag" style="background:#0ea5e9;color:#fff;">TypeScript</span>
+                        <span class="skill-tag" style="background:#6366f1;color:#fff;">Next.js</span>
+                        <span class="skill-tag" style="background:#f87171;color:#fff;">REST APIs</span>
+                        <span class="skill-tag" style="background:#facc15;color:#222;">Firebase</span>
+                        <span class="skill-tag" style="background:#a3e635;color:#222;">Machine Learning</span>
+                        <span class="skill-tag" style="background:#f472b6;color:#222;">UI/UX</span>
+                        <span class="skill-tag" style="background:#f59e42;color:#222;">Leadership</span>
+                        <span class="skill-tag" style="background:#818cf8;color:#fff;">Teamwork</span>
+                        <span class="skill-tag" style="background:#fbbf24;color:#222;">Problem Solving</span>
                     </div>
+                </div>
+                <div style="margin-top:2.2rem;">
+                    <h3 style="margin-bottom:0.7rem;color:#2563eb;">What I Do</h3>
+                    <ul style="font-size:1.08rem;line-height:1.7;color:#374151;list-style:square inside;margin-left:0.5rem;">
+                        <li>Full Stack Web Development (MERN, Next.js, REST APIs)</li>
+                        <li>AI Chatbots & Automation</li>
+                        <li>Cloud & Firebase Integrations</li>
+                        <li>UI/UX Design & Prototyping</li>
+                        <li>Team Leadership & Agile Collaboration</li>
+                        <li>Open Source & Community Building</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="projects" class="projects">
-        <h2 class="section-title">Featured Projects</h2>
+        <h2 class="section-title" data-aos="fade-up">Featured Projects</h2>
         <div class="project-grid">
-            <div class="project-card">
+            <!-- StudySync Web App -->
+            <div class="project-card" data-aos="fade-up">
                 <div class="project-image">
-                    <img src="/api/placeholder/400/300" alt="Project 1">
+                    <div class="project-overlay">
+                        <h3>Features</h3>
+                        <div class="project-technologies">
+                            <span>MERN</span>
+                            <span>MongoDB</span>
+                            <span>Express</span>
+                            <span>React</span>
+                            <span>Node.js</span>
+                        </div>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="StudySync Web App">
                 </div>
                 <div class="project-info">
-                    <h3>Project Name</h3>
-                    <p>Description of the project goes here. Explain the technology stack and your role.</p>
+                    <h3>StudySync Web App</h3>
+                    <p>Collaborative platform for students to form study groups, share resources, and schedule sessions. Real-time chat and group management included.</p>
                     <div class="project-links">
-                        <a href="#" class="project-link">View Project</a>
-                        <a href="#" class="project-link">Source Code</a>
+                        <a href="https://github.com//f2236" class="project-link" target="_blank" rel="noopener">Demo</a>
+                        <a href="https://github.com//f2236" class="project-link" target="_blank" rel="noopener">Code</a>
                     </div>
                 </div>
             </div>
-            <!-- Add more project cards as needed -->
+
+            <!-- Chatbot Integration Platform -->
+            <div class="project-card" data-aos="fade-up">
+                <div class="project-image">
+                    <div class="project-overlay">
+                        <h3>Features</h3>
+                        <div class="project-technologies">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>Socket.io</span>
+                            <span>AI</span>
+                        </div>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80" alt="Chatbot Platform">
+                </div>
+                <div class="project-info">
+                    <h3>Chatbot Integration Platform</h3>
+                    <p>Plug-and-play chatbot integration for websites and apps. Supports custom AI bots for customer support, study help, and more.</p>
+                    <div class="project-links">
+                        <a href="https://github.com//f2236" class="project-link" target="_blank" rel="noopener">Demo</a>
+                        <a href="https://github.com//f2236" class="project-link" target="_blank" rel="noopener">Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Find Freelancers Nearby -->
+            <div class="project-card" data-aos="fade-up">
+                <div class="project-image">
+                    <div class="project-overlay">
+                        <h3>Features</h3>
+                        <div class="project-technologies">
+                            <span>MERN</span>
+                            <span>GeoLocation</span>
+                            <span>React</span>
+                            <span>Node.js</span>
+                        </div>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Find Freelancers">
+                </div>
+                <div class="project-info">
+                    <h3>Find Freelancers Nearby</h3>
+                    <p>Web app to discover and connect with freelancers in your area. Features real-time chat, project posting, and secure payments.</p>
+                    <div class="project-links">
+                        <a href="#" class="project-link">Demo</a>
+                        <a href="#" class="project-link">Code</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Arabic Text Editor -->
+            <div class="project-card" data-aos="fade-up">
+                <div class="project-image">
+                    <div class="project-overlay">
+                        <h3>Key Features</h3>
+                        <div class="project-technologies">
+                            <span>Java</span>
+                            <span>Swing</span>
+                            <span>RTL Support</span>
+                        </div>
+                    </div>
+                    <img src="https://picsum.photos/400/300?random=1" alt="Arabic Text Editor">
+                </div>
+                <div class="project-info">
+                    <h3>Arabic Text Editor</h3>
+                    <p>Advanced text editor with right-to-left text support, Arabic font management, and custom keyboard shortcuts.</p>
+                    <div class="project-links">
+                        <a href="#" class="project-link">Demo</a>
+                        <a href="#" class="project-link">Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ATM Simulator -->
+            <div class="project-card" data-aos="fade-up">
+                <div class="project-image">
+                    <div class="project-overlay">
+                        <h3>Features</h3>
+                        <div class="project-technologies">
+                            <span>C++</span>
+                            <span>OOP</span>
+                            <span>File Handling</span>
+                        </div>
+                    </div>
+                    <img src="D:\SOFTWARE ENGINEERING\SEMESTER 6\WEB_COURSE\ITS_ME\IMG_3912.JPG" alt="ATM Machine">
+                </div>
+                <div class="project-info">
+                    <h3>ATM Simulator System</h3>
+                    <p>Console-based banking system with transaction history, PIN verification, and account management.</p>
+                    <div class="project-links">
+                        <a href="#" class="project-link">Demo</a>
+                        <a href="#" class="project-link">Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- E-Commerce Desktop App -->
+            <div class="project-card" data-aos="fade-up">
+                <div class="project-image">
+                    <div class="project-overlay">
+                        <h3>Features</h3>
+                        <div class="project-technologies">
+                            <span>Java</span>
+                            <span>MySQL</span>
+                            <span>Swing</span>
+                        </div>
+                    </div>
+                    <img src="https://picsum.photos/400/300?random=3" alt="E-Commerce App">
+                </div>
+                <div class="project-info">
+                    <h3>E-Commerce Desktop App</h3>
+                    <p>Inventory management system with customer orders tracking, product catalog, and sales analytics.</p>
+                    <div class="project-links>
+                        <a href="#" class="project-link">Demo</a>
+                        <a href="#" class="project-link">Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chess Game -->
+            <div class="project-card" data-aos="fade-up">
+                <div class="project-image">
+                    <div class="project-overlay">
+                        <h3>Features</h3>
+                        <div class="project-technologies">
+                            <span>C++</span>
+                            <span>SFML</span>
+                            <span>AI</span>
+                        </div>
+                    </div>
+                    <img src="https://picsum.photos/400/300?random=4" alt="Chess Game">
+                </div>
+                <div class="project-info">
+                    <h3>Chess Engine</h3>
+                    <p>2D chess game with move validation, computer opponent, and game history recording.</p>
+                    <div class="project-links>
+                        <a href="#" class="project-link">Demo</a>
+                        <a href="#" class="project-link">Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dictionary using Data Structures -->
+            <div class="project-card" data-aos="fade-up">
+                <div class="project-image">
+                    <div class="project-overlay">
+                        <h3>Features</h3>
+                        <div class="project-technologies">
+                            <span>C</span>
+                            <span>Trie</span>
+                            <span>Hashing</span>
+                        </div>
+                    </div>
+                    <img src="https://picsum.photos/400/300?random=5" alt="Dictionary">
+                </div>
+                <div class="project-info">
+                    <h3>Advanced Dictionary</h3>
+                    <p>Efficient dictionary implementation using Trie data structure with auto-suggestions and history.</p>
+                    <div class="project-links>
+                        <a href="#" class="project-link">Demo</a>
+                        <a href="#" class="project-link">Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hidden Treasure Game -->
+            <div class="project-card" data-aos="fade-up">
+                <div class="project-image">
+                    <div class="project-overlay">
+                        <h3>Features</h3>
+                        <div class="project-technologies">
+                            <span>C++</span>
+                            <span>OpenGL</span>
+                            <span>Physics</span>
+                        </div>
+                    </div>
+                    <img src="https://picsum.photos/400/300?random=6" alt="Treasure Game">
+                </div>
+                <div class="project-info">
+                    <h3>Hidden Treasure Hunt</h3>
+                    <p>Adventure game with procedural map generation, puzzle solving, and inventory system.</p>
+                    <div class="project-links>
+                        <a href="#" class="project-link">Demo</a>
+                        <a href="#" class="project-link">Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Snake Game -->
+            <div class="project-card" data-aos="fade-up">
+                <div class="project-image">
+                    <div class="project-overlay">
+                        <h3>Features</h3>
+                        <div class="project-technologies">
+                            <span>C++</span>
+                            <span>SFML</span>
+                            <span>GUI</span>
+                        </div>
+                    </div>
+                    <img src="https://picsum.photos/400/300?random=7" alt="Snake Game">
+                </div>
+                <div class="project-info">
+                    <h3>Classic Snake Game</h3>
+                    <p>Modern twist on classic snake game with power-ups, score tracking, and difficulty levels.</p>
+                    <div class="project-links>
+                        <a href="#" class="project-link">Demo</a>
+                        <a href="#" class="project-link">Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Projects -->
+            <div class="project-card" data-aos="fade-up">
+                <div class="project-image">
+                    <div class="project-overlay">
+                        <h3>Features</h3>
+                        <div class="project-technologies">
+                            <span>Python</span>
+                            <span>Django</span>
+                            <span>ML</span>
+                        </div>
+                    </div>
+                    <img src="https://picsum.photos/400/300?random=8" alt="Task Manager">
+                </div>
+                <div class="project-info">
+                    <h3>Smart Task Manager</h3>
+                    <p>AI-powered task prioritization system with deadline predictions and productivity analytics.</p>
+                    <div class="project-links>
+                        <a href="#" class="project-link">Demo</a>
+                        <a href="#" class="project-link">Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-aos="fade-up">
+                <div class="project-image">
+                    <div class="project-overlay">
+                        <h3>Features</h3>
+                        <div class="project-technologies">
+                            <span>React</span>
+                            <span>Firebase</span>
+                            <span>API</span>
+                        </div>
+                    </div>
+                    <img src="https://picsum.photos/400/300?random=9" alt="Social Media">
+                </div>
+                <div class="project-info">
+                    <h3>Social Media Dashboard</h3>
+                    <p>Real-time social media aggregator with content scheduling and analytics dashboard.</p>
+                    <div class="project-links>
+                        <a href="#" class="project-link">Demo</a>
+                        <a href="#" class="project-link">Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-aos="fade-up">
+                <div class="project-image">
+                    <div class="project-overlay">
+                        <h3>Features</h3>
+                        <div class="project-technologies">
+                            <span>Android</span>
+                            <span>Kotlin</span>
+                            <span>AR</span>
+                        </div>
+                    </div>
+                    <img src="https://picsum.photos/400/300?random=10" alt="AR Navigation">
+                </div>
+                <div class="project-info">
+                    <h3>AR Campus Navigator</h3>
+                    <p>Augmented Reality navigation system for university campuses with indoor mapping.</p>
+                    <div class="project-links>
+                        <a href="#" class="project-link">Demo</a>
+                        <a href="#" class="project-link">Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
         </div>
     </section>
 
     <section id="contact" class="contact">
-        <h2 class="section-title">Get In Touch</h2>
-        <div class="contact-content">
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <span>+92 322 6132708</span>
+        <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
+        <div class="contact-content" style="justify-content:center;align-items:center;">
+            <button id="openContactModal" class="btn primary" style="font-size:1.1rem;padding:0.8rem 2.2rem;margin:2rem auto;display:block;">Contact Me</button>
+        </div>
+        <!-- Modal Contact Form -->
+        <div id="contactModal" class="modal" style="display:none;position:fixed;z-index:2000;left:0;top:0;width:100vw;height:100vh;background:rgba(0,0,0,0.45);justify-content:center;align-items:center;">
+            <div class="modal-content" style="background:#fff;padding:2.5rem 2rem 2rem 2rem;border-radius:18px;max-width:400px;width:90vw;box-shadow:0 8px 32px rgba(44,83,100,0.18);position:relative;">
+                <span id="closeModal" style="position:absolute;top:18px;right:22px;font-size:1.7rem;cursor:pointer;color:#2563eb;">&times;</span>
+                <h3 style="margin-bottom:1.2rem;color:#2563eb;text-align:center;">Let's Connect</h3>
+                <div style="display:flex;flex-direction:column;gap:1.1rem;align-items:center;">
+                    <div style="display:flex;align-items:center;gap:0.7rem;font-size:1.1rem;color:#222;"><i class="fas fa-phone" style="color:#2563eb;"></i> <span>+92 322 6132708</span></div>
+                    <div style="display:flex;align-items:center;gap:0.7rem;font-size:1.1rem;color:#222;"><i class="fas fa-envelope" style="color:#2563eb;"></i> <span><a href="mailto:adnanabid093@gmail.com" style="color:#2563eb;text-decoration:underline;">adnanabid093@gmail.com</a></span></div>
                 </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>your.email@example.com</span>
-                </div>
+                <form class="contact-form" id="contactForm" autocomplete="off" style="margin-top:1.5rem;">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required aria-label="Your Name">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required aria-label="Your Email">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Type your message here..." required aria-label="Your Message" rows="5" style="resize:vertical;"></textarea>
+                    <button type="submit" class="btn primary" style="margin-top:10px;width:100%;font-size:1.1rem;">Send Message</button>
+                </form>
+                <div id="toast" class="toast" style="display:none;margin-top:1.2rem;background:#2563eb;color:#fff;padding:14px 24px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.15);font-size:1rem;text-align:center;">Thank you for reaching out! I'll get back to you soon.</div>
             </div>
-            <form class="contact-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" required></textarea>
-                <button type="submit" class="btn primary">Send Message</button>
-            </form>
         </div>
     </section>
 
     <footer class="footer">
-        <p>&copy; 2024 Adnan Hussain. All rights reserved.</p>
+        <p>&copy; 2024 <span style="font-weight:bold;">Adnan Hussain</span>. All rights reserved.</p>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Mobile Menu
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Particles.js
+        particlesJS('particles', {
+            particles: {
+                number: { value: 80 },
+                size: { value: 3 },
+                color: { value: '#2563eb' },
+                line_linked: {
+                    color: '#2563eb',
+                    opacity: 0.3
+                },
+                move: {
+                    speed: 2
+                }
+            }
+        });
+
+        // Modal Contact Form Logic
+        const openContactModal = document.getElementById('openContactModal');
+        const contactModal = document.getElementById('contactModal');
+        const closeModal = document.getElementById('closeModal');
+        const contactForm = document.getElementById('contactForm');
+        const toast = document.getElementById('toast');
+
+        if (openContactModal && contactModal && closeModal) {
+            openContactModal.onclick = () => { contactModal.style.display = 'flex'; };
+            closeModal.onclick = () => { contactModal.style.display = 'none'; };
+            window.onclick = (e) => { if (e.target === contactModal) contactModal.style.display = 'none'; };
+        }
+        if (contactForm && toast) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                toast.style.display = 'block';
+                setTimeout(() => {
+                    toast.style.display = 'none';
+                    contactForm.reset();
+                }, 2500);
+            });
+        }
+    </script>
 </body>
 </html>
